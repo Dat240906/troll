@@ -19,10 +19,10 @@ class Auth(View):
             return HttpResponse('User khong ton tai')
         
         login(request, User)
-        return redirect('product')
+        return redirect('TraiTym')
 
 
-class Product(LoginRequiredMixin, View):
+class Heart(LoginRequiredMixin, View):
     login_url = '/login/'
     def get(self, request):
-        return HttpResponse('<h1>CÓ CÁI CON KẶC HAHAHAHA</h1>')
+        return render(request, 'form/heart.html')
